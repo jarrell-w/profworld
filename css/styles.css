@@ -1,0 +1,432 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+ul, li {
+    list-style: none;
+}
+
+
+.question-text {
+    text-align: justify;
+}
+.quiz-card {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.delete-question-button {
+    position: absolute;
+    top: 5px;;
+    right: 5px;
+    width:fit-content;
+}
+
+.delete-question-button img {
+    width: 100%;
+    
+}
+
+.quiz-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.question-bank-question-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+.mobile-main{
+    display: none;
+}
+.sidebar li a {
+    font-size: .9rem;
+}
+.sidebar li .performance {
+    font-size: .85rem;
+}
+a {
+    text-decoration: none;
+    color: rgba(0,0,0,.8)
+}
+.sidebar-nav {
+    height: 100%;
+}
+.sidebar-nav ul {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.sidebar-nav ul > li {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 5px;
+    margin: 10px 0 ;
+    text-align: center;
+    font-weight: 500;
+}
+.sidebar-nav > a {
+    display: block;
+    text-align: center;
+}
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-brand img {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+}
+.Homepage-sidebar {
+    position: sticky;
+    top:0;
+    height: 100svh;
+    background-color: #FFCF44;
+    display: flex;
+    flex-direction: column;
+}
+.homepage-container{
+   
+
+}
+.category h2 {
+    margin-bottom: 20px;
+}
+.category p {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.1)
+
+}
+h2 {
+    font-size: large;
+}
+
+.main-row {
+    margin: 10px 20px;
+}
+
+/* Style for the contact information table */
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.contact-table th, .contact-table td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.contact-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+#questionInfo {
+    display:block;
+    width: 100%;
+}
+.questionInfo {
+    width: 100%;
+}
+.category-info {
+  margin-top: 10px;
+}
+
+.category-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.category-table th, .category-table td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.category-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+
+.body-region-info {
+    margin-top: 10px;
+}
+
+.body-region-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+
+.body-region-table th, .body-region-table td {
+    padding: 5 px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.body-region-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.treatment-technique-info {
+    margin-top: 10px;
+}
+
+.treatment-technique-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.treatment-technique-table th, .treatment-technique-table td {
+    padding: 5 px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.treatment-technique-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+ .toggle-switches h3 {
+            font-size: 16px; /* Adjust the font size as needed */
+        }
+
+.toggle-switches .form-check {
+            display: inline-block;
+            margin-right: 20px; /* Adjust the margin as needed */
+        }
+.checkbox-group-horizontal {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+    cursor: help; /* Change the cursor to a pointer on hover */
+}
+
+.tooltip-icon {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: blue; /* Change the text color to blue */
+    display: inline-block;
+    width: 20px; /* Adjust the size of the circle */
+    height: 20px; /* Adjust the size of the circle */
+    line-height: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 255, 0.2); /* Blue background color with some transparency */
+    border-radius: 50%;
+    margin-right: 5px; /* Adjust the margin as needed */
+    cursor: help; /* Change the cursor to a pointer on hover */
+}
+
+
+.tooltip:hover .tooltiptext {
+    display: block;
+}
+
+.tooltip .tooltiptext {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    top: 100%; /* Show the tooltip below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.question-counter {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: gray; /* Set the text color to gray or any desired color */
+    margin: 0 5px; /* Adjust the margin to control the spacing */
+    width: 20px; /* Adjust the size of the circle */
+    height: 20px; /* Adjust the size of the circle */
+    line-height: 20px;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#loginButton {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#loginButton:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-menu li a {
+    padding-bottom: .75rem;
+    position: relative;
+}
+
+.dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #171717;
+    transition: all 0.3s ease;
+
+}
+
+.link a:hover::after {
+    width: 70%;
+}
+
+     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+@media (max-width:600px)  { 
+    .mobile-header {
+        min-height: 75px;
+        position: sticky;
+        top: 0px;
+        background-color: #FFCF44;
+    }
+    .desktop-main,.Homepage-sidebar {
+        display: none;
+    }
+    .mobile-main{
+        display: block;
+        width: 100%;
+    }
+    .mobile-nav-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .mobile-nav{
+    }
+    .mobile-dropdown {
+        margin-right: 10px;        
+    }
+    .dropdown-toggle {
+        background-color: #171717;
+    }
+    .dropdown-menu {
+        background-color: #272727 ;
+        margin-right: 10px;
+    }
+    .dropdown-menu li {
+        padding: 8px 2px;
+
+    }
+    .dropdown-menu li a {
+        display: block;
+        color:white;
+        font-size: 18px;
+    }
+    .fade-in-transition {
+        transition: all 1s ease-in-out;
+    }
+    .mobile-navbar-brand img {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+    }
+    .mobile-statistics {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    .category {
+        border: 1px solid #cfcfcf;
+        padding: 20px;
+        text-align: center;
+    }
+    /* smartphones, Android phones, landscape iPhone */ 
+}

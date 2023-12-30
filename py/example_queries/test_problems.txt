@@ -1,0 +1,10 @@
+SELECT p.problem_id, p.question, p.answer,
+	p.incorrect1, p.incorrect2,
+	p.incorrect3, p.incorrect4,
+	p.explanation, p.category_tag,
+	p.region_tag, p.treatment_tag,
+	p.image
+FROM problem p
+JOIN question_list ql USING (problem_id)
+JOIN test t USING (test_id)
+WHERE t.test_id = INSERT_TEST_ID;

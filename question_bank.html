@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" defer integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/questionbank.js" defer></script>
+    <style>
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group label {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="row homepage-container">
+        <aside class="Homepage-sidebar col-2">
+            <nav class="sidebar-nav">
+                <a href="admin.html" class="navbar-brand"><img src="/images/logo-removebg-preview.png" alt=""></a>
+                <ul class="list-unstyled">
+                    <li><a href="admin.html">Welcome</a></li>
+                    <li><a href="createtest.html">Create Test</a></li>
+                    <li><a href="previoustests.html">Previous Tests</a></li>
+                    <li><a href="performance.html">Performance</a></li>
+                    <li><a href="question_bank.html">Question Bank</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content col-sm-10 col-12">
+            <header class="header container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
+                    <div class="container-xxl">
+                        <h1>Welcome, Admin</h1>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">Test Date</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin.html" class="nav-link">My Account</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/index.html" class="nav-link">Sign Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <section class="statistics">
+                <h3 class="my-2">Question Bank</h3>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add</button>
+                <button class="btn btn-warning edit-button" data-bs-toggle="modal" data-bs-target="#editQuestionModal">Edit</button>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+                <ul id="listOfQuestions">
+                    <li class="quiz-card my-3" id="questionCard" style="display:none;">
+                        <p class="question-text" id="questionText">Question text goes here</p>
+                    </li>
+                </ul>
+                
+
+
+                <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addModalLabel">Add Question</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addQuestionForm">
+                                    <div class="form-group">
+                                      <label for="questionInfo" id="questionInfoLabel">Question Information</label>
+                                      <textarea id="questionInfo" name="questionInfo" rows="4" class='' required></textarea>
+                                      </div>
+                                    <div class="form-group">
+                                      <label for="correctAnswer">Correct Answer</label>
+                                      <input type="text" id="correctAnswerInput" name="correctAnswer" required>
+                                    
+                                      <label for="incorrectAnswer1">Incorrect Answer 1</label>
+                                      <input type="text" id="incorrectAnswer1" name="incorrectAnswer1" required>
+
+                                      <label for="incorrectAnswer2">Incorrect Answer 2</label>
+                                      <input type="text" id="incorrectAnswer2" name="incorrectAnswer2" required>
+
+                                      <label for="incorrectAnswer3">Incorrect Answer 3</label>
+                                      <input type="text" id="incorrectAnswer3" name="incorrectAnswer3" required>
+
+                                      <label for="incorrectAnswer4">Incorrect Answer 4 (optional)</label>
+                                      <input type="text" id="incorrectAnswer4" name="incorrectAnswer4">
+                                    </div>
+                                    <label for="categoryTag">Category Tag</label>
+                                    <div class="checkbox-group" id="nestedCategoryCheckbox">
+                                        <label><input type="radio" name="categoryTagOptions"> Anatomy</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Autonomics</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Biomechanics</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Lymphatics</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> HEENT</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Cardiopulmonary</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Gastrointestinal</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Pregnancy</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Pediatrics</label><br>
+                                        <label><input type="radio" name="categoryTagOptions"> Orthopedic/Gait</label><br>
+                                    </div>
+                                    <hr>
+                                    <label for="bodyRegionTag">Body Region Tag</label>
+                                    <div class="checkbox-group" id="nestedBodyRegionCheckbox">
+                                        <label><input type="radio" name="bodyRegionOptions"> Head</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Cervical</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Thoracic</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Lumber</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Pelvis</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Sacrum</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Lower extremity</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Upper extremity</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Ribs</label><br>
+                                        <label><input type="radio" name="bodyRegionOptions"> Abs</label><br>
+                                    </div>
+                                    <hr>
+                                    <label for="treatmentTechniquesTag">Treatment Techniques Tag</label>
+                                    <div class="checkbox-group" id="nestedTreatmentTechniquesCheckbox">
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Myofascial release (MFR)/Soft tissue (ST)</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Muscle energy (ME)</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> High-velocity low-amplitude (HVLA)</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Counterstrain (CS)</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Facilitated positional release (FPR)</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Balanced ligamentous tension (BLT)</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Still technique</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Cranial techniques</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Lymphatics techniques</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Mechanism of action (MOA)</label><br>
+                                        <label><input type="radio" name="treatmentTechniqueOptions"> Indications/Contraindications to Treatment</label><br>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                      <label for="questionExplanation" id="questionExplanationLabel">Question Explanation</label>
+                                      <textarea id="questionExplanation" name="questionExplanation" rows="4" class='' required></textarea>
+                                      </div>
+                                    <div class="form-group">
+                                        <label for="imageUpload">Attach Image</label>
+                                        <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary" id = 'submitAddQuestion'>Add Question</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="editQuestionModal" tabindex="-1" role="dialog" aria-labelledby="editQuestionModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editQuestionModalLabel">Edit Question</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editQuestionForm">
+                                    <div class="form-group">
+                                        <label for="editQuestionId">Question ID to Edit</label>
+                                        <input type="text" id="editQuestionId" name="editQuestionId" required>
+                                        <button type="button" class="btn btn-primary" id="checkEditQuestion">Check Question</button>
+                                    </div>
+
+                                    <!-- Fields for editing the question -->
+                                    <div id="editQuestionFields" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="editQuestionInfo" id="editQuestionInfoLabel">Question Information</label>
+                                            <textarea id="editQuestionInfo" name="editQuestionInfo" rows="4" class='' required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editCorrectAnswer">Correct Answer</label>
+                                            <input type="text" id="editCorrectAnswerInput" name="editCorrectAnswer" required>
+
+                                            <label for="editIncorrectAnswer1">Incorrect Answer 1</label>
+                                            <input type="text" id="editIncorrectAnswer1" name="editIncorrectAnswer1" required>
+
+                                            <label for="editIncorrectAnswer2">Incorrect Answer 2</label>
+                                            <input type="text" id="editIncorrectAnswer2" name="editIncorrectAnswer2" required>
+
+                                            <label for="editIncorrectAnswer3">Incorrect Answer 3</label>
+                                            <input type="text" id="editIncorrectAnswer3" name="editIncorrectAnswer3" required>
+
+                                            <label for="editIncorrectAnswer4">Incorrect Answer 4 (optional)</label>
+                                            <input type="text" id="editIncorrectAnswer4" name="editIncorrectAnswer4">
+                                        </div>
+                                        <label for="editCategoryTag">Category Tag</label>
+                                        <div class="checkbox-group" id="editNestedCategoryCheckbox">
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Anatomy"> Anatomy</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Autonomics"> Autonomics</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Biomechanics"> Biomechanics</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Lymphatics"> Lymphatics</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="HEENT"> HEENT</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Cardiopulmonary"> Cardiopulmonary</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Gastrointestinal"> Gastrointestinal</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Pregnancy"> Pregnancy</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Pediatrics"> Pediatrics</label><br>
+                                            <label><input type="checkbox" name="editCategoryTagOptions" value="Orthopedic/Gait"> Orthopedic/Gait</label><br>
+                                        </div>
+                                        <hr>
+                                       <label for="editBodyRegionTag">Body Region Tag</label>
+                                       <div class="checkbox-group" id="editNestedBodyRegionCheckbox">
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Head"> Head</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Cervical"> Cervical</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Thoracic"> Thoracic</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Lumber"> Lumber</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Pelvis"> Pelvis</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Sacrum"> Sacrum</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Lower extremity"> Lower extremity</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Upper extremity"> Upper extremity</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Ribs"> Ribs</label><br>
+                                          <label><input type="checkbox" name="editBodyRegionOptions" value="Abs"> Abs</label><br>
+                                      </div>
+                                      <hr>
+                                      <label for="editTreatmentTechniquesTag">Treatment Techniques Tag</label>
+                                      <div class="checkbox-group" id="editNestedTreatmentTechniquesCheckbox">
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions"> Myofascial release (MFR)/Soft tissue (ST)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Myofascial release (MFR)/Soft tissue (ST)"> Myofascial release (MFR)/Soft tissue (ST)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Muscle energy (ME)"> Muscle energy (ME)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="High-velocity low-amplitude (HVLA)"> High-velocity low-amplitude (HVLA)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Counterstrain (CS)"> Counterstrain (CS)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Facilitated positional release (FPR)"> Facilitated positional release (FPR)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Balanced ligamentous tension (BLT)"> Balanced ligamentous tension (BLT)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Still technique"> Still technique</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Cranial techniques"> Cranial techniques</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Lymphatics techniques"> Lymphatics techniques</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Mechanism of action (MOA)"> Mechanism of action (MOA)</label><br>
+                                          <label><input type="checkbox" name="editTreatmentTechniqueOptions" value="Indications/Contraindications to Treatment"> Indications/Contraindications to Treatment</label><br>
+                                      </div>
+                                      <hr>
+                                      <div class="form-group">
+                                          <label for="editQuestionExplanation" id="editQuestionExplanationLabel">Question Explanation</label>
+                                          <textarea id="editQuestionExplanation" name="editQuestionExplanation" rows="4" class='' required></textarea>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="editImageUpload">Attach Image</label>
+                                          <input type="file" id="editImageUpload" name="editImageUpload" accept="image/*">
+                                      </div>
+
+                                      <button type="submit" class="btn btn-primary" id="submitEditQuestion">Save Changes</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Delete Question</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="deleteQuestionForm">
+                                    <label for="deleteQuestionId">Question ID to Delete</label>
+                                    <input type="text" id="deleteQuestionId" name="deleteQuestionId">
+                                    <button type="submit" class="btn btn-danger" id="submitDeleteQuestion">Delete Question</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <nav class="pagination navbar navbar-light" id="pagination">
+                <ul id="paginationList">
+                    
+                </ul>
+            </nav>
+        </main>
+    </div>
+</body>
+</html>

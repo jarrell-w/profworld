@@ -1,0 +1,8 @@
+/* ALL PROBLEMS QUERY
+ *
+ * returns every problem in the database at once.
+ */
+
+SELECT *
+FROM problem p;
+

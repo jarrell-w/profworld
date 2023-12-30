@@ -1,0 +1,133 @@
+#question-body-container {
+    
+}
+
+.question-area-container {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    max-width: 1000px;
+    height: fit-content;
+    max-height: 1200px;
+}
+
+.container-for-question-bg {
+    background-color: #f0f3ff;
+}
+
+.question-body-container {
+    background-color: #f2f3f5;
+}
+
+.context-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.context-menu-option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.highlighted {
+    background-color: yellow;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+}
+
+
+.question-category {
+    font-size: medium;
+}
+.question-nav {
+    background-color: #FFCF44;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.question-nav-container {
+    height: 100%;
+    width: 100%;
+}
+.question-header {
+    padding: 3px;
+    width: 100%;
+} 
+
+#question-title {
+    font-size: clamp(1rem, 0.75rem + 0.667vw, 1.35rem);
+    margin: 2px 2px 0 10px;
+}
+
+#time-elapsed {
+    font-size: clamp(0.8rem, 0.586rem + 0.571vw, 1.1rem);
+    margin: 0 10px;
+}
+
+#current-question {
+    font-size: clamp(1rem, 0.857rem + 0.281vw, 1.2rem);
+    text-align: justify;
+}
+
+.question-img {
+    max-width: 400px;
+    height: auto;
+    grid-column: 8/-1;
+}
+
+.question-img img {
+    width: 100%;
+}
+
+.question-background {
+    font-size: clamp(1rem, 0.643rem + 0.552vw, 1.2rem);
+}
+
+.background-info-list li {
+    font-size: clamp(.9rem, 0.643rem + 0.352vw, 1.1rem);
+}
+#options {
+  text-align: left;
+  margin-left: 1rem;
+
+}
+#options div {
+    margin-top: 0.3rem;
+}
+#options div label{
+    font-size: clamp(0.8rem, 0.443rem + 0.852vw, 1.2rem);
+    display: inline;
+}
+.question-box-area {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5rem;
+}
+.question-area {
+    grid-column: 1/8;
+}
+.submit-question {
+    margin-top: 1.1rem;
+    margin-bottom: .3rem;
+}
+@media (max-width: 650px) {
+    .question-box-area {
+
+    }
+    .question-img {
+        display: none;
+    }
+    .question-area {
+        grid-column: 1/-1;
+        max-width: 90%;
+        margin-left: 1.5rem;
+    }
+    .submit-question {
+        margin-top: .9rem;
+    }
+}
+

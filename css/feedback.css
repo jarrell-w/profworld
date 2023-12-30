@@ -1,0 +1,21 @@
+/* Style for the contact information table */
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.contact-table th, .contact-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.contact-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}

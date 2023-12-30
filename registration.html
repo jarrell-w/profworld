@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Rowan OMM Registration</title>
+  <link href="css/login.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="tooltip">
+      <div class="info">&#9432;</div>
+      <div class="tooltiptext">Fill in your email, username, and password to create your account.</div>
+    </div>
+    <div class="registration-form">
+      <h2>Email:</h2>
+      <form id="registration-form" class="form-registration" onsubmit="return handleRegistrationSubmit(event);">
+        <input type="email" name="email" placeholder="Email" id="email" required>
+        <br>
+        <h2>Password:</h2>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <br>
+        <input type="submit" value="Register" id="submit-registration">
+      </form>
+    </div>
+  </div>
+
+  <script src="js/registration.js"></script>
+</body>
+
+</html>

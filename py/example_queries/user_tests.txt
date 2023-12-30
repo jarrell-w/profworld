@@ -1,0 +1,4 @@
+SELECT t.test_id
+FROM user u
+JOIN test t USING (user_id)
+WHERE user_id = INSERT_USER_ID;
